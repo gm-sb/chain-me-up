@@ -17,7 +17,6 @@ class InvitationsController < ApplicationController
         format.js 
         format.html { redirect_to '/' } 
       end
-
   end
 
   def show 
