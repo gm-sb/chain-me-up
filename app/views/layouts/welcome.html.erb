@@ -13,7 +13,15 @@
   <nav class="navbar navbar-default navbar-fixed-top white" role="navigation">
       <%= link_to "looseleaf", root_path, {:id => "logo", :class => "navbar-brand"} %>
 
- <%= render :partial => "navigation/logged_out"  %> 
+    <% if current_user  %>
+      <%= render :partial => "navigation/logged_in" if !current_user.guest %>
+      <%= render :partial => "navigation/guest" if current_user.guest %>
+      <p class="navbar-text navbar-right"><%= current_user.username %></p>
+
+      
+    <% elsif !current_user  %>
+      <%= render :partial => "navigation/logged_out" %>
+    <% end %>
 
 </nav>
 

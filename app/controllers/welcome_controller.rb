@@ -9,7 +9,7 @@ class WelcomeController < ApplicationController
     respond_to do |format|
       format.html { render :layout => "welcome" }
       format.json {
-       render json: @branch.get_all_children(@tree.id.to_s) }
+       render json: @branch.get_all_children }
     end
   end
 
@@ -20,7 +20,7 @@ class WelcomeController < ApplicationController
 
     respond_to do |format|
       format.json {
-       render json: @branch.get_all_children(@tree.id.to_s) }
+       render json: @branch.get_all_children }
     end    
   end
 end
