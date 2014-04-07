@@ -12,6 +12,7 @@ $(function() {
     var $array = $(this).children("option")
     var $array = $.map($array, function(val, i) { return val.value })
     var $content = $("#tree_content").val();
+    var matched = false;
     if($content == "") {
       $("#tree_content").val($value);
     } else {
@@ -20,9 +21,17 @@ $(function() {
         var patt = new RegExp(n)
         if($content.match(patt)) {     
           $content = $content.replace(n, $value)
+          matched = true
           return $("#tree_content").val($content);
         }
       });
+      if (matched == false) {
+        // alert("hello")
+        console.log($content)
+        console.log($value)
+        $content = $value + " " + $content;
+        $("#tree_content").val($content);
+      }
     }  
   });
 

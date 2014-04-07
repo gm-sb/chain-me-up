@@ -14,7 +14,7 @@ class TreesController < ApplicationController
     @tree = Tree.new(get_tree_params)
     @tree.bind_user(current_user)
     if @tree.save
-      redirect_to '/', notice: "Your tree has been saved!"
+      redirect_to '/trees', notice: "Your tree has been saved!"
     else
       render :new
     end
