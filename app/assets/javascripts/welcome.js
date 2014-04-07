@@ -9,29 +9,6 @@ $("document").ready(function() {
      }, 1000);
   });
 
-  $("#demo").waypoint({
-    handler: function(direction) {
-      console.log('aasdfads')
-      if(direction === "up") {
-        $(".story-panel").removeClass("open");
-      } else if(direction === "down") {
-        $(".story-panel").addClass("open");
-      }
-    },
-    offset: 700
-  });
-
-
-  d3.json(window.location + "home.json", function(error, data) {
-    if(error) {
-      console.log(error)
-    }
-    else if(data) {
-      tree = new Tree(data);
-      tree.draw(data); 
-    }
-  });
-
 
   var width = window.width,
       height = window.height - 50;
@@ -57,10 +34,9 @@ $("document").ready(function() {
       link = svg.selectAll(".link");
 
   var duration = 1500,
-      timer = setInterval(update, duration);
+      timer = setInterval(updateHome, duration);
 
-
-  function update() {
+  function updateHome() {
 
     function calcSize(depth) {
       var sum = .5
@@ -132,10 +108,25 @@ $("document").ready(function() {
         .attr("cx", function(d) { return d.px = d.x; })
         .attr("cy", function(d) { return d.py = d.y; });
   }
-      
  
 });
 
 
-   
+  
 
+
+  
+
+
+   
+function homeAnimation() {
+  d3.json(window.location + "home.json", function(error, data) {
+    if(error) {
+      console.log(error)
+    }
+    else if(data) {
+      tree = new Tree(data);
+      tree.draw(data); 
+    }
+  });
+}

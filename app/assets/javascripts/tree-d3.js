@@ -300,8 +300,6 @@ function treeButton(placement, title, context, callback) {
 
 };
 
-var duration = 5000,
-    timer = setInterval(update, duration);
 
 function update() {
   if (tree) {
@@ -325,27 +323,3 @@ function update() {
   });
 
 }
-
-$(document).ready(function () {
-  var tree_id_regex = new RegExp("trees/.*\.")
-  // console.log(window.location.href)
-  var tree_id = window.location.href.match(tree_id_regex)
-  if (tree_id)
-    {var tree_id = tree_id[0].split("/")[1]}
-  else
-    {var tree_id = ""}
-
-  var link = window.location + ".json" + "?current_branch=" + tree_id
-  // console.log(link);
-  d3.json(link, function(error, data) {
-    if (error) {
-      tree = null
-    }
-    else if(data) {
-      tree = new Tree(data);
-      tree.draw(data); 
-      $(".story-panel").addClass("open");
-      $(".instruction").addClass("closed");
-    }  
-  });
-});
