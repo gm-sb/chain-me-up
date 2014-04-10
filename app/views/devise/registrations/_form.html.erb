@@ -7,7 +7,9 @@
         <h4 class="modal-title"><%= current_user && !current_user.guest ? "Edit" : "Finalize account" %></h4>
       </div>
       <div class="modal-body">
-      <p>Such a great contribution! just enter your password to finalize your account and see your tree (close to skip for now and just invite friends).</p>
+      <% if current_user && !current_user.guest %>
+        <p>Such a great contribution! just enter your password to finalize your account and see your tree (close to skip for now and just invite friends).</p>
+      <% end %>
       <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
       <%= devise_error_messages! %>
 
