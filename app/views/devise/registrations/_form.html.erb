@@ -4,9 +4,10 @@
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
 
-        <h4 class="modal-title"><%= current_user && !current_user.guest ? "Edit" : "Sign up" %></h4>
+        <h4 class="modal-title"><%= current_user && !current_user.guest ? "Edit" : "Finalize account" %></h4>
       </div>
       <div class="modal-body">
+      <p>Such a great contribution! just enter your password to finalize your account and see your tree (close to skip for now and just invite friends).</p>
       <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
       <%= devise_error_messages! %>
 

@@ -1,0 +1,5 @@
+$("body").append('<%= j render "invitations/modal"%>')
+
+$("#invite").modal('show');
+
+$(".new-tree").html('great story! View it <%= link_to "here", tree_path(@tree) %>');

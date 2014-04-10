@@ -9,6 +9,10 @@ function Tree(data) {
 
   this.svg = d3.select("svg.vis");
 
+  if(this.data.children === undefined) {
+    showIntro();
+  }
+
 }
 
 Tree.prototype = {
@@ -37,6 +41,7 @@ Tree.prototype = {
     this.transitionLinks();
     this.transitionNodes();
     this.isRoot() ? this.removeButtons() : this.addButtons();
+
     
   },
 
@@ -300,6 +305,13 @@ function treeButton(placement, title, context, callback) {
 
 };
 
+
+function showIntro() {
+  $p = $("<p>");
+  $p.html("You don't have any branches on your tree yet. Invite friends to your story to see the story and the tree grow.");
+  $("#invite .modal-body").prepend($p);
+  $("#invite").modal();
+}
 
 function update() {
   if (tree) {
