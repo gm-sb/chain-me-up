@@ -1,7 +1,27 @@
+html, body {height: 100%;}
+
+#wrap {min-height: 100%;}
+
+#wrapper {
+  overflow:auto;
+  padding-bottom: 100px; /* must be same height as the footer */
+
+}
+
+footer {position: relative;
+  margin-top: -50px; /* negative value of footer height */
+  height: 50px;
+  clear:both;} 
+
 body {
   padding-top: 50px;
   font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif !important; 
   font-weight: 300;
+  &:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
 }
 
 
@@ -17,7 +37,22 @@ nav {
     color: rgba(16,4,71,1);
   }
   
+  .open > a:focus {
+    background-color: white !important;
+  }
+
   .dropdown-menu {
+    &:focus {
+      background: none;
+    }
+    
+    li {
+      width: 100%;
+    }
+    a {
+      display: block;
+      width: 100%;
+    }
     a.navbar-link:hover {
       border-bottom: none;
     }

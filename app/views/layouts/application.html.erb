@@ -7,6 +7,7 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+  <div id="wrap">
   <div id="wrapper">
     <%= render :partial => "shared/instructions" %>
    
@@ -30,6 +31,9 @@
     <%= yield %>
   </div>
 
+</div>
+
+<%= render 'footers/footer' %>
 </div>
 </body>
 </html>

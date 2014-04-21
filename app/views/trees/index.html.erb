@@ -1,14 +1,1 @@
-
-<div class="tree-wrapper">
-  <h2>Your trees <small>(<%= @trees.count %>)</small></h2>
-  <hr>
-  <% @trees.each do |tree| %>  
-    <a href="<%= tree_path(tree) %>"><div class="tree">
-      <h3><%= tree.title %><span><%= pluralize(tree.contributor_count, 'contributor') %></span></h3>
-    </div></a>
-  <% end %>
-</div>
-
-<% if @trees.empty? %>
-<p>It looks like you haven't started or contributed to any trees. Why don't you <%= link_to "create one?", new_tree_path %></p>
-<% end %>
+<%= render 'index_partial' %>

@@ -11,10 +11,12 @@ class TreesController < ApplicationController
   end
 
   def create
+    
     @tree = Tree.new(get_tree_params)
     @tree.bind_user(current_user)
     @tree.save
     @branch = @tree
+    @trees = Tree.get_trees_by_user(current_user)
     respond_to do |format|
       format.html { redirect_to '/trees', notice: "Your tree has been saved!" }
       format.js
