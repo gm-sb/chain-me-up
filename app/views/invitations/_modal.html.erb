@@ -5,16 +5,17 @@
         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
         <h4 class="modal-title" id="myModalLabel">Such a great story! Next, invite your friends...</h4>
       </div>
-      <div class="modal-body">
-        <%= form_tag create_invitations_path(@tree, @branch), :remote => true do %>
-        <%= label_tag :invitations, "Please comma-separate your friends' emails:" %>
-        <%= text_area :invitations, "", :class => "form-control" %><br />
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        <%= submit_tag "Send", :class => "btn btn-success" %>
-        <% end %> 
-      </div>
+      <%= form_tag create_invitations_path(@tree, @branch), :remote => true do %>
+        <div class="modal-body">
+          <%= label_tag :invitations, "Please comma-separate your friends' emails:" %>
+          <%= text_area :invitations, "", :class => "form-control" %><br />
+         </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          <%= submit_tag "Send", :class => "btn btn-success" %>
+        </div>
+      <% end %> 
+
     </div>
   </div>
 </div>
