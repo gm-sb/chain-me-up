@@ -8,6 +8,14 @@ nav {
   }
 }
 
+#explore:focus{
+  outline: none;
+  text-decoration:none;  
+}
+#explore:hover{
+  text-decoration:underline;  
+}
+
 .intro {
   width: 50%;
   padding: 20px; 

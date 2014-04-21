@@ -130,7 +130,6 @@ Tree.prototype = {
           return self.xTranslation(d);
         })
 
-
     node
       .exit()
       .attr("transform", function(d) {
