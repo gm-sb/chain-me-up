@@ -40,7 +40,7 @@ class TreesController < ApplicationController
 
     respond_to do |format|
       format.html
-      format.json { render json: @branch.get_all_children }
+      format.json { render json: @branch.get_all_children(params[:current_branch]) }
     end
   end
 

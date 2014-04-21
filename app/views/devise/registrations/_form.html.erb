@@ -14,10 +14,15 @@
          <% end %>
          </h4>
       </div>
-     
-      <% if current_user && !current_user.guest %>
-        <p>Such a great contribution! just enter your password to finalize your account and see your tree (close to skip for now and just invite friends).</p>
-      <% end %>
+        <p>
+        <% if current_user && !current_user.guest %>
+          
+        <% elsif current_user && current_user.guest %>
+          just enter your password to finalize your account and see your tree(s) (close to skip for now and just invite friends).
+        <% else %>
+
+        <% end %>
+        </p>
       
       <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
        <div class="modal-body">
