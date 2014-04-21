@@ -6,9 +6,9 @@
 
         <h4 class="modal-title">Log in</h4>
       </div>
-      <div class="modal-body">
+     
         <%= form_for(resource, :html => {:id => 'login_form'},  url: session_path(resource_name), :format => :json) do |f| %>
-
+         <div class="modal-body">
         <div><%= f.label :email %><br />
         <%= f.email_field :email, :class => "form-control", autofocus: true %></div>
 
@@ -23,6 +23,11 @@
         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
         <%= f.submit "done", :class=> "btn btn-success" %>
       <% end %>
+
+      <script> 
+
+
+      </script>
 
       </div>
     </div><!-- /.modal-content -->
