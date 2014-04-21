@@ -4,7 +4,7 @@
   <h2 data-toggle="tooltip" data-placement="left" title="the title of the story"><%= @branch.history[:title].html_safe if @branch %></h2>
   <p data-toggle="tooltip" data-placement="left" title="what's been written so far"><%= @branch.history[:content].html_safe if @branch %></p>
 
-  <%= form_for @new_branch, :url => create_branch_path(@tree, @branch), :remote => true do |f| %>
+  <%= form_for @new_branch, :url => create_branch_path(@tree, @branch) do |f| %>
 
     <%= f.label :content %><br />
     <%= f.text_area :content, :placeholder => "add onto the story" %><br />

@@ -8,8 +8,8 @@ function Tree(data) {
     }); 
 
   this.svg = d3.select("svg.vis");
-
-  if(this.data.child_trees.length === 0) {
+  console.log(this.data)
+  if(!this.data.child_trees) {
     console.log(this.data)
     showIntro();
   }
