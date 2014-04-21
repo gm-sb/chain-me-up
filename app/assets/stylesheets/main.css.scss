@@ -144,4 +144,21 @@ nav {
       color: white !important;
     } 
   }
+footer {
+  width: 100%;
+  background: #100447 !important;
+  height: 50px;
+  border-top: 1px solid #ccc;
+  margin-top: 20px;
+  padding-left: 20px;
+  color: white;
+  padding-top: 15px;
 
+  a {
+    color: white; 
+
+    &:hover {
+      color: white;
+    }
+  }
+}

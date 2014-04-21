@@ -26,6 +26,15 @@ nav {
   margin: auto;
 }
 
+.navbar-right {
+  float: right;
+  margin-right: 10px;
+
+  li {
+    float: left;
+  }
+}
+
 
 .btn.white {
   color: white !important;
@@ -73,17 +82,26 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#13004c', end
 
 #demo {
   position: relative;
+  &:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
 }
 
 #demo svg {
   float: left;
+  width: 60%;
+  box-sizing: border-box;
 }
 
 #demo .story-panel {
   position: static;
-  float:right;
+  float:left;
   height: 600px;
   padding-bottom: 20px;
+  width: 40%;
+  box-sizing: border-box;
 }
 
 
