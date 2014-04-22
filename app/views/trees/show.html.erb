@@ -19,7 +19,7 @@ $(document).ready(function () {
   else
     {var tree_id = ""}
 
-  var link = window.location + ".json" + "?current_branch=" + tree_id
+  var link = window.location + ".json" //+ "?current_branch=" + tree_id
   // console.log(link);
   d3.json(link, function(error, data) {
     if (error) {
