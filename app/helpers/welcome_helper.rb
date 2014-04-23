@@ -12,4 +12,13 @@ module WelcomeHelper
     ].sample
   end
 
+  def positive
+    [
+      "Amusement", "Delight", "Elation",
+      "Excitement", "Happiness", "Joy", "Pleasure", "Affection", "Empathy", "Friendliness", 
+      "Love", "Courage", "Hope", "Pride", "Satisfaction", "Trust", "Calm", "Relaxation", 
+      "Relief", "Serenity", "Interest", "Politeness", "Surprise"
+    ].sample
+  end
+
 end

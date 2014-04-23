@@ -36,7 +36,7 @@ That new branch is now considered a 'child tree' of the parent tree, because the
 
 Looseleaf is a Ruby on Rails app, built using three key models:
 
-- `Tree` - the tree model holds all of the data of a story, and the relationship between a tree and its 'child trees'. We used MongoDB to store the trees, and the 'recursively_embeds_many' relationship offered by Mongoid (more on that below).
+- `Tree` - the tree model holds all of the data of a story, and the relationship between a tree and its 'child trees'. We used MongoDB to store the trees, and the `recursively_embeds_many` relationship offered by Mongoid (more on that below).
 
 - `User` - our user model stores a record of all of the trees a given user has contributed to. Also, we stub out a guest user when a user clicks on a 'submit link', allowing the user to add to story without needing to log in.
 
@@ -52,7 +52,7 @@ We chose to use MongoDB to store our data because MongoDB's BSON format fit the 
 
 We learned that the second constraint here was the more important constraint because the first constraint requires less operations than the second.
 
-We chose to use the 'recursively_embeds_many' relationship offered by Mongoid, because it allowed us to retrieve a branch and all of its child trees with one database query. The cost of this technical choice was that we had to write our own method to find a branch within a given tree, since only the root tree is stored as its own Mongoid document.
+We chose to use the `recursively_embeds_many` relationship offered by Mongoid, because it allowed us to retrieve a branch and all of its child trees with one database query. The cost of this technical choice was that we had to write our own method to find a branch within a given tree, since only the root tree is stored as its own Mongoid document.
 
 ### Interactive tree visualization using D3.js
 
