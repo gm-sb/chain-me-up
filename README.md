@@ -52,11 +52,11 @@ We chose to use MongoDB to store our data because MongoDB's BSON format fit the 
 
 We learned that the second constraint here was the more important constraint because the first constraint requires less operations than the second.
 
-We chose to use the 'recursively_embeds_many' relationship offered by Mongoid, because it allowed us to retrieve a branch and all of its child trees with one database query.
+We chose to use the 'recursively_embeds_many' relationship offered by Mongoid, because it allowed us to retrieve a branch and all of its child trees with one database query. The cost of this technical choice was that we had to write our own method to find a branch within a given tree, since only the root tree is stored as its own Mongoid document.
 
 ### Interactive tree visualization using D3.js
 
-We used D3.js to power the interactive visualization of a tree. While D3 provides some fundamental tools ot  for users to use, we built our our own 'drawTree' method which you 
+We used D3.js to power the interactive visualization of a tree, and map the nodes of a tree to the text of a story. This was accomplished using our `drawTree` method which makes a JSON request from the server for content, and then draws a tree, containing all of its branches and text content.
 
 ### Login via Token 
 
@@ -75,10 +75,10 @@ We built this using a recurring AJAX call that fetches new data from the server,
 
 #Built With
 
-- Ruby on Rails
-- MongoDB
-- Mongoid
-- D3.js
+- [Ruby on Rails](https://github.com/rails/rails)
+- [MongoDB](https://www.mongodb.org/) 
+- [Mongoid](http://mongoid.org/) - a Ruby wrapper for MongoDB
+- [D3.js](http://d3js.org/) 
 
 And many Ruby Gems, a full list of which is at [/master/Gemfile](https://github.com/gm-sb/looseleaf/blob/master/Gemfile).
 
