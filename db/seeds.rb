@@ -58,7 +58,7 @@
 # end
 
 
-tree_one = Tree.new(:content => "Once upon a time in a galexy far, far away", :title => "A Fantasy Science Fiction")
+tree_one = Tree.new(:content => "Once upon a time in a galaxy far, far away", :title => "A Fantasy Science Fiction")
 
 
 pars = [
