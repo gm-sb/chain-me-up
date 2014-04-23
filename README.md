@@ -34,13 +34,13 @@ That new branch is now considered a 'child tree' of the parent tree, because the
 
 ### Models
 
-Looseleaf is a Ruby on Rails App, built using three key models:
+Looseleaf is a Ruby on Rails app, built using three key models:
 
-- Tree - the tree model holds all of the data of a story, and the relationship between a tree and its 'child trees'. We used MongoDB to store the trees, and the 'recursively_embeds_many' relationship offered by Mongoid (more on that below).
+- `Tree` - the tree model holds all of the data of a story, and the relationship between a tree and its 'child trees'. We used MongoDB to store the trees, and the 'recursively_embeds_many' relationship offered by Mongoid (more on that below).
 
-- User - our user model stores a record of all of the trees a given user has contributed to. Also, we stub out a guest user when a user clicks on a 'submit link', allowing the user to add to story without needing to log in.
+- `User` - our user model stores a record of all of the trees a given user has contributed to. Also, we stub out a guest user when a user clicks on a 'submit link', allowing the user to add to story without needing to log in.
 
-- Invitation - the invitation represents the connection between a tree and a user who has been asked to contribute to it. The invitation model holds a unique token that maps to the tree, the specific branch they were asked to contribute to, and the user's email address. This allows us to create a guest user for the user, and authorize them to contribute to the right branch on the right tree.
+- `Invitation` - the invitation represents the connection between a tree and a user who has been asked to contribute to it. The invitation model holds a unique token that maps to the tree, the specific branch they were asked to contribute to, and the user's email address. This allows us to create a guest user for the user, and authorize them to contribute to the right branch on the right tree.
 
 ###Storing a tree using MongoDB
 
