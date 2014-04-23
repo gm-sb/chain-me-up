@@ -1,6 +1,6 @@
 ![looseleaf logo](http://i1282.photobucket.com/albums/a535/bhaskaraspb/looseleaf_zpsbcea3d9b.png "looseleaf logo")
 
-Looseleaf is an app to help you write stories collaboratively with friends. Simply start a story, share it with a few friends, and watch your story grow.
+[Looseleaf](http://looseleaf.me) is an app to help you write stories collaboratively with friends. Simply start a story, share it with a few friends, and watch your story grow.
 
 #How to use Looseleaf
 
@@ -80,7 +80,7 @@ We built this using a recurring AJAX call that fetches new data from the server,
 - Mongoid
 - D3.js
 
-And many Ruby Gems, a full list of which is at /master/Gemfile.
+And many Ruby Gems, a full list of which is at [/master/Gemfile](https://github.com/gm-sb/looseleaf/blob/master/Gemfile).
 
 #Contributors
 
