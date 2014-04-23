@@ -12,7 +12,7 @@ You can also start your own story from scratch by signing up for an account, and
 
 At any point, click on 'View Trees', to see all of your trees and all of the contributions that have been made on your tree.
 
-## Potential uses
+### Potential uses
 
 Looseleaf can also be used to create and visualize any type of content which can be built iteratively by a group of people. There's no reason to restrict it to just stories.
 
@@ -24,13 +24,11 @@ Some ideas that our users have shared with us:
 
 We'd love to hear more ideas from you!
 
-## Clarifying language: 'Tree', 'Branch', and 'Child Trees'
+### Clarifying language: 'Tree', 'Branch', and 'Child Trees'
 
 'Tree' is the term we use to describe the root and all of the branches of a piece of content. Whenever a user adds to a tree, that user creates a new 'branch' on that tree. 
 
 That new branch is now considered a 'child tree' of the parent tree, because the branch itself is actually a new tree.
-
-[maybe put an image here?]
 
 #How Looseleaf works
 
@@ -38,9 +36,7 @@ That new branch is now considered a 'child tree' of the parent tree, because the
 
 Looseleaf is a Ruby on Rails App, built using three key models:
 
-- Tree - the tree model holds all of the data of a story, and the relationship between a tree and its 'child trees'. 
-
-We used MongoDB to store the trees, and the 'recursively_embeds_many' relationship offered by Mongoid.
+- Tree - the tree model holds all of the data of a story, and the relationship between a tree and its 'child trees'. We used MongoDB to store the trees, and the 'recursively_embeds_many' relationship offered by Mongoid (more on that below).
 
 - User - our user model stores a record of all of the trees a given user has contributed to. Also, we stub out a guest user when a user clicks on a 'submit link', allowing the user to add to story without needing to log in.
 
@@ -50,7 +46,7 @@ We used MongoDB to store the trees, and the 'recursively_embeds_many' relationsh
 
 We chose to use MongoDB to store our data because MongoDB's BSON format fit the format of our data nicely. While choosing options, there were two key constraints we had in mind:
 
--It should be very easy to quickly retrieve a branch along with all of its ancestors, up till the root of the tree. This operation is important because it is how we construct the history of a story, up till the point when a user is contributing to it.
+- It should be very easy to quickly retrieve a branch along with all of its ancestors, up till the root of the tree. This operation is important because it is how we construct the history of a story, up till the point when a user is contributing to it.
 
 - It should be very easy to quickly retrive a branch with all of its child trees, along with all of the relationships in between. This is important because a core feautre of Looseleaf is the ability to navigate a full tree. This is only possible if we can quickly pull from the database a tree's content as well as the content of all of its child trees.
 
@@ -86,4 +82,6 @@ We built this using a recurring AJAX call that fetches new data from the server,
 
 And many Ruby Gems, a full list of which is at /master/Gemfile.
 
-#License
+#Contributors
+
+Looseleaf was built by [George Mayer](https://github.com/georgemayer) and [Sushanth Bhaskarabhatla](https://github.com/bhaskaraspb).
