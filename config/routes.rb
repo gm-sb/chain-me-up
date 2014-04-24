@@ -12,6 +12,8 @@ ChainMeUp::Application.routes.draw do
 
   get "/submit" => 'invitations#show'
 
+  get 'about' => 'pages#about'
+
   get '/trees/new' => 'trees#new', :as => "new_tree"
 
   post '/trees' => 'trees#create'

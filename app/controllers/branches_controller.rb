@@ -23,11 +23,8 @@ class BranchesController < ApplicationController
     if @new_branch.save
       invite = Invitation.find_by(:token => session[:token])
       invite.destroy
-      redirect_to @tree, :notice => "Do you want to create an account to save access to your tree?"
+      redirect_to @tree
     end
-
-  end
-
-  
+  end  
 
 end  

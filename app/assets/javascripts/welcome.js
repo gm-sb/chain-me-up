@@ -96,7 +96,6 @@ $("document").ready(function() {
           return diagonal({source: o, target: o});
         });
 
-
     // Transition nodes and links to their new positions.
     var t = svg.transition()
         .duration(duration);

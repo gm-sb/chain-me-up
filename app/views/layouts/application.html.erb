@@ -20,6 +20,7 @@
       <%= render :partial => "navigation/logged_in" if !current_user.guest %>
       
       <%= render :partial => "navigation/guest" if current_user.guest %>
+
       <p class="navbar-text navbar-right"><%= current_user.username %></p>
 
     <% elsif !current_user  %>

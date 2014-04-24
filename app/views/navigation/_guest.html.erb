@@ -5,5 +5,7 @@
 
 <ul class="nav navbar-nav navbar-right">
 
+  <li><%= link_to "About", about_path, :class => 'navbar-link navbar-right' %></li>
+
   <li><%= button_to 'signup', edit_user_registration_path, :method => :get, :remote => true, :class => 'btn btn-default navbar-btn', :id => "create-account" %></li>
 </ul>
